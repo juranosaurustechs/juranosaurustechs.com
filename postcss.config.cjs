@@ -3,6 +3,5 @@ module.exports = {
     'postcss-inline-svg': {
       paths: ['public/assets/svgs'],
     },
-    'postcss-custom-media': {}
   },
 };
