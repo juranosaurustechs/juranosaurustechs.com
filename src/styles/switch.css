@@ -1,0 +1,30 @@
+:root {
+  --switch-width: 2rem;
+  --switch-height: 1.5rem;
+  --switch-padding: 1px;
+}
+
+input.switch {
+  width: 0;
+  overflow: hidden;
+  padding-left: calc(var(--switch-width) + var(--switch-padding) * 2);
+  background: #000 url() 2px center / auto calc(var(--switch-height) - var(--switch-padding) * 4)
+    no-repeat;
+  background-image: svg-load('circle.svg', fill=#fff);
+  border-radius: calc(var(--switch-height) / 2);
+  border: 0;
+  color: transparent;
+  height: var(--switch-height);
+  transition: all 0.3s ease-in-out;
+}
+input.switch:not([disabled]) {
+  cursor: pointer;
+}
+[data-theme='dark'] input.switch {
+  background-color: var(--primary-color);
+  background-position: calc(100% - 2px) center;
+  background-image: svg-load('circle.svg', fill=#000);
+}
+input.switch.vertical {
+  transform: rotate(-90deg);
+}

@@ -1,0 +1,25 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Heading from '../components/Heading.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header title={SITE_TITLE} />
+		<main>
+      <Heading under={`Stay tuned for ${SITE_TITLE}' new website!`}>{SITE_DESCRIPTION}</Heading>
+		</main>
+		<Footer />
+	</body>
+</html>
+<style>
+  body {height: calc(100vh); display: flex; flex-direction: column; justify-content: space-between;}
+  main {height: 100%; display: flex; justify-content: center; align-items: center;}
+</style>

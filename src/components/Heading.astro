@@ -1,0 +1,42 @@
+---
+export interface Props {
+  // heading: string;
+  over?: string;
+  under?: string;
+}
+const {over, under} = Astro.props;
+---
+
+<div class="heading">
+  {over && <h2>{over}</h2>}
+  <h1><slot /></h1>
+  {under && <h3>{under}</h3>}
+</div>
+<style>
+  .heading {
+    max-width: 720px;
+    margin-bottom: 2rem;
+  }
+
+  .heading:only-child {
+    margin-bottom: 0;
+  }
+
+  .heading h1 {
+    border-bottom: 2px solid var(--primary-color);
+    border-top: 2px solid var(--primary-color);
+    padding: 0.75rem 0 0.5rem;
+  }
+
+  .heading h2 {
+    border-top: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 1rem 0 0.875rem;
+  }
+
+  .heading h3 {
+    color: var(--text-secondary);
+    padding: 1.5rem 0;
+  }
+
+</style>
